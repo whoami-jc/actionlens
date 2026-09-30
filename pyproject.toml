@@ -1,0 +1,17 @@
+[project]
+name = "actionlens"
+version = "0.1.0"
+description = "AI agent tool-call risk classifier"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+actionlens = "actionlens.cli:main"
+
+[tool.poetry]
+packages = [{ include = "actionlens", from = "src" }]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
