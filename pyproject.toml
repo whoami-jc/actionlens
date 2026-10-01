@@ -9,6 +9,7 @@ dependencies = [
     "transformers (==4.44.2)",
     "torch (==2.2.2)",
     "numpy (>=1.26.4,<2.0.0)",
+    "openai (>=3.22.1,<4.0.0)",
 ]
 
 [tool.poetry]
