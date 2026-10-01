@@ -4,9 +4,13 @@ AI Agent Tool Call Risk Classifier
 
 ## Table of contents
 
+- [Purpose](#purpose)
+- [Dataset](#dataset)
+- [Tests](#tests)
+
 ## Purpose
 
-## Dataset structure
+## Dataset
 
 The dataset contains **8,000 real tool-call examples**, organized into eight categories under `data/raw/`. Each category has its own JSONL file, with one example per line.
 
@@ -37,3 +41,6 @@ The default split is **80% training, 10% validation, and 10% test** (6,400 / 800
 ```bash
 poetry run python data/prepare_dataset.py --train 0.7 --validation 0.15 --test 0.15
 ```
+## Tests
+
+TODO

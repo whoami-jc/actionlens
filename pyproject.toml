@@ -3,14 +3,16 @@ name = "actionlens"
 version = "0.1.0"
 description = "AI agent tool-call risk classifier"
 readme = "README.md"
-requires-python = ">=3.11"
-dependencies = []
-
-[project.scripts]
-actionlens = "actionlens.cli:main"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "scikit-learn (>=1.9.1,<2.0.0)",
+    "transformers (==4.44.2)",
+    "torch (==2.2.2)",
+    "numpy (>=1.26.4,<2.0.0)",
+]
 
 [tool.poetry]
-packages = [{ include = "actionlens", from = "src" }]
+packages = [{ include = "src" }]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
