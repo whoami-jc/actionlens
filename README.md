@@ -165,7 +165,7 @@ for label, score in risk.items():
     print(f"{label:25} {score:.4f}")
 ```
 
-The manual inference recorded in the project notes produced:
+A manual inference with v0.2 produced:
 
 ```text
 read_only                 0.0246
@@ -176,7 +176,7 @@ external_communication    0.2732
 privileged                0.3882
 ```
 
-These values illustrate the output of the recorded checkpoint; retraining can produce different scores. They are not expected labels or calibrated guarantees.
+These values illustrate the output of the evaluated checkpoint; retraining can produce different scores. They are not expected labels or calibrated guarantees.
 
 ## Training experiments
 
@@ -246,7 +246,7 @@ Both evaluators use a fixed threshold of `0.5`. They print results to the termin
 
 ## Results
 
-The following values are the recorded experiments documented in [`README_FINAL_GPT.md`](README_FINAL_GPT.md), rather than a fresh benchmark run. Different training runs may produce different results: the training scripts do not fix all random seeds or pin the downloaded base-model revision.
+The following values summarize the project experiments. Different training runs may produce different results: the training scripts do not fix all random seeds or pin the downloaded base-model revision.
 
 ### Original test versus unseen tools
 
@@ -287,7 +287,7 @@ Arguments: {"command": "rm -rf /tmp/example"}
 
 Although the arguments contain a destructive command, the tool's described action is read-only.
 
-The recorded error analysis also includes `deletion_policy_reader`, described as “Show the configured deletion policy; do not alter resources”. v0.2 assigned approximately `0.019` to `read_only` and `0.967` to `mutating`. This suggests that deletion-related wording outweighed the explicit instruction that resources would not change.
+The error analysis also includes `deletion_policy_reader`, described as “Show the configured deletion policy; do not alter resources”. v0.2 assigned approximately `0.019` to `read_only` and `0.967` to `mutating`. This suggests that deletion-related wording outweighed the explicit instruction that resources would not change.
 
 The manual `delete_namespace` example received a high destructive score, despite zero destructive F1 on the challenge set. A successful individual prediction therefore does not establish reliable generalization across destructive actions.
 
