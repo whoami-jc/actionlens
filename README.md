@@ -1,6 +1,6 @@
 # ActionLens
 
-**Exploring whether a small model can recognize the risk of an AI agent's next action.**
+**A lightweight Transformer for classifying semantic risk in AI agent tool calls.**
 
 ActionLens classifies the security-relevant properties of a tool call before an AI agent executes it. It takes the tool name, description and arguments, and returns scores for six properties: reading, modifying, destroying, accessing sensitive data, communicating externally and exercising elevated privileges.
 
